@@ -1,0 +1,29 @@
+application: cmap
+version: 1
+runtime: php
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /assets/csss
+  static_dir: assets/css
+
+- url: assets/images
+  static_dir: assets/images
+
+- url: assets/js
+  static_dir: assets/js
+
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+
+- url: /
+  script: index.php
+  login: required
+  auth_fail_action: redirect
+
+- url: /main
+  script: index.php
+  login: required
+  auth_fail_action: redirect
